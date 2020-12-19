@@ -17,7 +17,7 @@ const handle = async (validatedUser) => {
   if (existUser && existUser.password === validatedUser.password) {
     const accessToken = generateAccessToken(existUser.userId);
     const refreshToken = generateRefreshToken(existUser.userId);
-    tokenRepository.refreshTokenStorage(refreshToken);
+    await tokenRepository.insert(refreshToken);
     return { accessToken, refreshToken };
   } else {
     throw createError(400, 'Invalid username and password!');
