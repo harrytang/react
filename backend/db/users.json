@@ -10,5 +10,11 @@
         "username": "quynhtran",
         "email": "thyquynh@gmail.com",
         "password": "testing"
+    },
+    {
+        "userId": "5c1edccd-ba2d-4cd0-9d5e-405f71d9dbdf",
+        "username": "harrytang",
+        "email": "harry@powerkernel.com",
+        "password": "password"
     }
 ]
