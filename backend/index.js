@@ -8,7 +8,11 @@ dotenv.config();
 
 const addUserController = require('./controllers/addUserController');
 const accessTokenController = require('./controllers/accessTokenController');
+const refreshTokenController = require('./controllers/refreshTokenController');
 const myAccountController = require('./controllers/myAccountController');
+const listPostsController = require('./controllers/listPostsController');
+const addPostController = require('./controllers/addPostController');
+
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -32,12 +36,43 @@ app.post('/login', async (req, res) => {
   }
 });
 
+// Get user information
 app.get('/myaccount', async (req, res) => {
   try {
     const data = await myAccountController.invoke(req);
     sendSuccessResponse(res, data);
   } catch (err) {
     // console.log(err.statusCode, err.message);
+    sendErrorResponse(res, err);
+  }
+});
+
+// Get new token based on refresh token
+app.post('/token', async (req, res) => {
+  try {
+    const data = await refreshTokenController.invoke(req);
+    sendSuccessResponse(res, data);
+  } catch (err) {
+    sendErrorResponse(res, err);
+  }
+});
+
+// List posts
+app.get('/posts', async (req, res) => {
+  try {
+    const data = await listPostsController.invoke(req);
+    sendSuccessResponse(res, data);
+  } catch (err) {
+    sendErrorResponse(res, err);
+  }
+});
+
+// Create new post
+app.post('/posts', async (req, res) => {
+  try {
+    const data = await addPostController.invoke(req);
+    sendSuccessResponse(res, data);
+  } catch (err) {
     sendErrorResponse(res, err);
   }
 });

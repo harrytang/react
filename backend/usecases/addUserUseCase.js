@@ -1,7 +1,7 @@
 const userRepository = require('../repositories/userRepository');
 const User = require('../entities/User');
-
 const createError = require('http-errors');
+
 const handle = async (validatedUser) => {
   const existUser = await userRepository.checkExist(validatedUser.username);
   if (!existUser) {

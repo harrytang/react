@@ -1,8 +1,14 @@
 [
-  {
-    "userId": "48803dac-7180-4a50-83f9-7d81a88a9aed",
-    "username": "quynh",
-    "email": "quynh@gmail.com",
-    "password": "test123456"
-  }
+    {
+        "userId": "48803dac-7180-4a50-83f9-7d81a88a9aed",
+        "username": "quynh",
+        "email": "quynh@gmail.com",
+        "password": "test123456"
+    },
+    {
+        "userId": "aba3d398-dd1c-439d-b820-c2c2e9b5ded6",
+        "username": "quynhtran",
+        "email": "thyquynh@gmail.com",
+        "password": "testing"
+    }
 ]
